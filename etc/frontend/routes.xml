@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Magenest_SmsMarketing extension
+ * NOTICE OF LICENSE
+ *
+ * @category Magenest
+ * @package  Magenest_SmsMarketing
+ * @author   CanhND
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <route id="smsmarketing" frontName="smsmarketing">
+            <module name="Magenest_SmsMarketing" />
+        </route>
+    </router>
+</config>

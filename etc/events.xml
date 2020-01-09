@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Magenest_SmsMarketing extension
+ * NOTICE OF LICENSE
+ *
+ * @category Magenest
+ * @package  Magenest_SmsMarketing
+ * @author   CanhND
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+        <!--Test event-->
+    <!--<event name="customer_save_after_data_object">-->
+             <!--<observer name="magenest_smsmarketing" instance="Magenest\SmsMarketing\Observer\Customer\CustomerRegistration" />-->
+    <!--</event>-->
+    <event name="sales_order_save_commit_after">
+        <observer name="smsmarketing_order" instance="Magenest\SmsMarketing\Observer\Order\OrderSave"/>
+    </event>
+</config>

@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<include xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_include.xsd">
+    <group id="textlocal" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="0" showInStore="0">
+        <label>Textlocal</label>
+        <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enable</label>
+            <config_path>smsmarketing/textlocal/enabled</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="email" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Email</label>
+            <config_path>smsmarketing/textlocal/email</config_path>
+            <tooltip>Your email must be the same as your Textlocal email</tooltip>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="hash" translate="label" type="password" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Your API hash</label>
+            <config_path>smsmarketing/textlocal/hash</config_path>
+            <tooltip>Your hash must be the same as your Textlocal hash</tooltip>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="sender" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Sender</label>
+            <config_path>smsmarketing/textlocal/sender</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="content" translate="label" type="textarea" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Content</label>
+            <config_path>smsmarketing/textlocal/content</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="number" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Number Test</label>
+            <config_path>smsmarketing/textlocal/number</config_path>
+            <comment>Please enter telephone number test connect Textlocal Integration !</comment>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="button" translate="button_label" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+            <button_label>Check Connect Textlocal</button_label>
+            <frontend_model>Magenest\SmsMarketing\Block\Adminhtml\System\Config\Textlocal</frontend_model>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+            <attribute type="button_url">smsmarketing/check/textlocal</attribute>
+            <comment>Click this button Check Connect Textlocal</comment>
+        </field>
+    </group>
+
+    <group id="nexmo" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+        <label>Nexmo</label>
+        <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enable</label>
+            <config_path>smsmarketing/nexmo/enabled</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+
+        <field id="api_key" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>API key</label>
+            <config_path>smsmarketing/nexmo/api_key</config_path>
+            <tooltip>Your api key must be the same as your nexmo api key</tooltip>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="api_secret" translate="label" type="password" sortOrder="3" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>API Secret</label>
+            <config_path>smsmarketing/nexmo/api_secret</config_path>
+            <tooltip>Your api secret must be the same as your nexmo api secret</tooltip>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+
+        <field id="sender" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Sender</label>
+            <config_path>smsmarketing/nexmo/sender</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="number" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Number Test</label>
+            <config_path>smsmarketing/nexmo/number</config_path>
+            <comment>Please enter telephone number test connect Nexmo Integration !</comment>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="button" translate="button_label" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+            <button_label>Check Connect Nexmo</button_label>
+            <frontend_model>Magenest\SmsMarketing\Block\Adminhtml\System\Config\Nexmo</frontend_model>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+            <attribute type="button_url">smsmarketing/check/nexmo</attribute>
+            <comment>Click this button Check Connect Nexmo</comment>
+        </field>
+
+    </group>
+
+
+    <group id="voodoo" translate="label" type="text" sortOrder="25" showInDefault="1" showInWebsite="0" showInStore="0">
+        <label>Voodoo</label>
+        <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enable</label>
+            <config_path>smsmarketing/voodoo/enabled</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="username" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enter Voodoo Username</label>
+            <comment>Enter your Voodoo SMS API Username</comment>
+            <tooltip>Your username must be the same as your voodoo api username</tooltip>
+            <validate>required-entry</validate>
+            <config_path>smsmarketing/voodoo/username</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="password" translate="label" type="password" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enter Voodoo Password</label>
+            <comment>Enter your Voodoo SMS API Password</comment>
+            <tooltip>Your password must be the same as your voodoo api password</tooltip>
+            <validate>required-entry</validate>
+            <config_path>smsmarketing/voodoo/password</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="sender" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Sender</label>
+            <config_path>smsmarketing/voodoo/sender</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="number" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Number Test</label>
+            <config_path>smsmarketing/voodoo/number</config_path>
+            <comment>Please enter telephone number test connect Voodoo Integration !</comment>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="button" translate="button_label" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+            <button_label>Check Connect Voodoo</button_label>
+            <frontend_model>Magenest\SmsMarketing\Block\Adminhtml\System\Config\Voodoo</frontend_model>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+            <attribute type="button_url">smsmarketing/check/voodoo</attribute>
+            <comment>Click this button Check Connect Voodoo</comment>
+        </field>
+    </group>
+
+    <group id="textmarketer" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+        <label>Textmarketer</label>
+        <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enable</label>
+            <config_path>smsmarketing/textmarketer/enabled</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="username" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enter Textmarketer Username</label>
+            <comment>Enter your Textmarketer SMS API Username</comment>
+            <tooltip>Your username must be the same as your textmarketer api username</tooltip>
+            <validate>required-entry</validate>
+            <config_path>smsmarketing/textmarketer/username</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="password" translate="label" type="password" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enter Textmarketer Password</label>
+            <comment>Enter your Textmarketer SMS API Password</comment>
+            <tooltip>Your password must be the same as your textmarketer api password</tooltip>
+            <validate>required-entry</validate>
+            <config_path>smsmarketing/textmarketer/password</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="sender" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Sender</label>
+            <config_path>smsmarketing/textmarketer/sender</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="number" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Number Test</label>
+            <config_path>smsmarketing/textmarketer/number</config_path>
+            <comment>Please enter telephone number test connect Textmarketer Integration !</comment>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="button" translate="button_label" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+            <button_label>Check Connect Textmarketer</button_label>
+            <frontend_model>Magenest\SmsMarketing\Block\Adminhtml\System\Config\Textmarketer</frontend_model>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+            <attribute type="button_url">smsmarketing/check/textmarketer</attribute>
+            <comment>Click this button Check Connect Textmarketer</comment>
+        </field>
+    </group>
+
+    <group id="twilio" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+        <label>Twilio</label>
+        <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enable</label>
+            <config_path>smsmarketing/twilio/enabled</config_path>
+            <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+        </field>
+        <field id="sid" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enter Twilio ID</label>
+            <comment>Enter your Twilio Account ID</comment>
+            <tooltip>Your ID must be the same as your twilio account id</tooltip>
+            <validate>required-entry</validate>
+            <config_path>smsmarketing/twilio/sid</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="token" translate="label" type="password" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enter Twilio Auth Token</label>
+            <comment>Enter your Twilio Auth Token</comment>
+            <tooltip>Your token must be the same as your twilio auth token</tooltip>
+            <validate>required-entry</validate>
+            <config_path>smsmarketing/twilio/token</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="from" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Enter Twilio Phone Number</label>
+            <comment>Enter your Twilio Phone Number</comment>
+            <tooltip>Your number must be the same as your twilio phone number</tooltip>
+            <validate>required-entry</validate>
+            <config_path>smsmarketing/twilio/from</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="sender" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Sender</label>
+            <config_path>smsmarketing/twilio/sender</config_path>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="number" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="0" showInStore="0">
+            <label>Number Test</label>
+            <config_path>smsmarketing/twilio/number</config_path>
+            <comment>Please enter telephone number test connect Twilio Integration !</comment>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+        </field>
+        <field id="button" translate="button_label" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+            <button_label>Check Connect Twilio</button_label>
+            <frontend_model>Magenest\SmsMarketing\Block\Adminhtml\System\Config\Twilio</frontend_model>
+            <depends>
+                <field id="enabled">1</field>
+            </depends>
+            <attribute type="button_url">smsmarketing/check/twilio</attribute>
+            <comment>Click this button Check Connect Twilio</comment>
+        </field>
+    </group>
+
+</include>

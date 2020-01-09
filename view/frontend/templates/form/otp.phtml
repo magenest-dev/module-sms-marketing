@@ -1,0 +1,13 @@
+<?php
+// @codingStandardsIgnoreFile
+?>
+<form class="form form-smsmarketing-manage" action="<?php /* @escapeNotVerified */ echo $block->getAction() ?>" method="post" id="form-validate">
+    <fieldset class="fieldset">
+        <?php echo $block->getBlockHtml('formkey')?>
+        <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('OTP has been sent to your mobile number') ?></span></legend><br>
+        <div class="field choice">
+            <input type="text" name="otp" id="otp" placeholder="<?php /* @escapeNotVerified */ echo __('Enter OTP') ?>">
+            <input type="submit">
+        </div>
+    </fieldset>
+</form>

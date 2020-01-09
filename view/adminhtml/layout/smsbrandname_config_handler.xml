@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ *
+ * Magenest_VtigerCrm extension
+ * NOTICE OF LICENSE
+ *
+ * @category  Magenest
+ * @package   Magenest_VtigerCrm
+ * @author CanhND
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="js">
+            <block class="Magenest\SmsMarketing\Block\Adminhtml\System\Config\Textlocal" template="Magenest_SmsMarketing::system/config/textlocal/check.phtml"/>
+            <block class="Magenest\SmsMarketing\Block\Adminhtml\System\Config\Nexmo" template="Magenest_SmsMarketing::system/config/nexmo/check.phtml"/>
+            <block class="Magenest\SmsMarketing\Block\Adminhtml\System\Config\Voodoo" template="Magenest_SmsMarketing::system/config/voodoo/check.phtml"/>
+            <block class="Magenest\SmsMarketing\Block\Adminhtml\System\Config\Textmarketer" template="Magenest_SmsMarketing::system/config/textmarketer/check.phtml"/>
+            <block class="Magenest\SmsMarketing\Block\Adminhtml\System\Config\Twilio" template="Magenest_SmsMarketing::system/config/twilio/check.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Copyright © 2016 Magenest. All rights reserved.
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <!--Order status change-->
+    <!--<event name="sales_order_save_after">-->
+        <!--<observer name="magenest_smsmarketing" instance="Magenest\SmsMarketing\Observer\Order\OrderSave"/>-->
+    <!--</event>-->
+    <event name="sales_order_save_commit_after">
+        <observer name="smsmarketing_order" instance="Magenest\SmsMarketing\Observer\Order\OrderSave"/>
+    </event>
+
+</config>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ * Magenest_SmsMarketing extension
+ * NOTICE OF LICENSE
+ *
+ * @category Magenest
+ * @package  Magenest_SmsMarketing
+ * @author   CanhND
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+
+    <event name="layout_load_before"> <!-- triggered right after layout is loaded -->
+        <observer name="magenest_smsmarketing" instance="Magenest\SmsMarketing\Observer\Layout\Mobile" />
+    </event>
+    <!--Customer create new account-->
+    <event name="customer_register_success">
+        <observer name="magenest_smsmarketing" instance="Magenest\SmsMarketing\Observer\Customer\CustomerRegistration" />
+    </event>
+
+    <event name="sales_order_save_commit_after">
+        <observer name="smsmarketing_order" instance="Magenest\SmsMarketing\Observer\Order\OrderSave"/>
+    </event>
+
+    <event name="controller_action_predispatch_customer_account_createpost">
+        <observer name="sms_otp" instance="Magenest\SmsMarketing\Observer\Customer\CheckSmsOtp" />
+    </event>
+
+</config>

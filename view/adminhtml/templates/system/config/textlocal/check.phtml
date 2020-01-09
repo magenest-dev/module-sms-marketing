@@ -1,0 +1,57 @@
+<?php
+/**
+ * Copyright © 2015 Magenest. All rights reserved.
+ * See COPYING.txt for license details.
+ *
+ *
+ * Magenest_SmsMarketing extension
+ * NOTICE OF LICENSE
+ *
+ * @category  Magenest
+ * @package   Magenest_SmsMarketing
+ * @author CanhND
+ */
+?>
+<div class="actions actions-get-auth-token">
+    <div style="color: red" id="auth_token_result" class="message-validation hide"></div>
+    <button  class="action-validate-get-auth-token" type="button"  id="<?php echo $block->getHtmlId() ?>">
+        <span><?php /* @escapeNotVerified */ echo $block->escapeHtml($block->getButtonLabel()) ?></span>
+    </button>
+</div>
+<script>
+    require(['jquery'], function(jQuery){
+        jQuery('.action-validate-get-auth-token').click(function(){
+            var email = jQuery('#smsmarketing_integration_textlocal_email').val();
+            var hash = jQuery('#smsmarketing_integration_textlocal_hash').val();
+            var number = jQuery('#smsmarketing_integration_textlocal_number').val();
+            var data = {
+                email: email,
+                hash : hash,
+                number: number,
+                form_key: FORM_KEY
+            };
+            var url = '<?php echo $block->getUrl('smsmarketing/system_config/check'); ?>//';
+            jQuery.ajax({
+                type: "POST",
+                url: url,
+                data: data,
+                showLoader: true,
+                success: function(response){
+                    var result_token = jQuery('#auth_token_result');
+                    var responseObj = JSON.parse(response);
+                    console.log(responseObj);
+                    if(responseObj.error == 1){
+                        jQuery('#smsmarketing_textlocal_auth_token').val(responseObj.description);
+                        result_token.removeClass('hide').addClass('error');
+                        result_token.html(responseObj.description);
+                    }else{
+                        jQuery('#smsmarketing_textlocal_auth_token').val(responseObj.description);
+                        jQuery('#<?php echo $block->getHtmlId() ?>').attr('disabled', 'disabled');
+                        result_token.removeClass('hide').addClass('success');
+                        result_token.html(responseObj.description);
+                    }
+                }
+            });
+        });
+    });
+</script>

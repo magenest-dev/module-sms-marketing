@@ -1,0 +1,20 @@
+{
+  "name": "magenest/module-sms-marketing",
+  "description": "Magento 2 Sms Marketing Extension by Magenest",
+  "require": {
+    "magenest/core" : "*"
+  },
+  "type": "magento2-module",
+  "version": "1.1.0",
+  "license": [
+    "BSD-3-Clause"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Magenest\\SmsMarketing\\": ""
+    }
+  }
+}
